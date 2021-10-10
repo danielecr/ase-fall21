@@ -11,6 +11,10 @@ class TestSubtract(unittest.TestCase):
         result = c.subtract(-1, -2)
         self.assertEqual(result, 1)    
 
+    def test_subtract_ZERO(self):
+        result = c.subtract(-1, 0)
+        self.assertEqual(result, -1)    
+
     def test_subtract_integers_pos_neg(self):
         result = c.subtract(1, -2)
         self.assertEqual(result, 3)  

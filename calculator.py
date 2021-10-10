@@ -3,7 +3,7 @@
 def sum(m,n):
 	res = m;
 	if n < 0:
-		for x in range(abs(n)):
+		for x in range( - n ):
 			res -= 1
 	else:
 		for x in range(0, n):
@@ -12,11 +12,11 @@ def sum(m,n):
 
 def subtract(m,n):
 	res = m;
-	if n > 0:
-		for x in range(abs(n)):
+	if n >= 0:
+		for x in range(n):
 			res -= 1
 	else:
-		for x in range(0, n):
+		for x in range(0, -n):
 			res += 1
 	return res;
 
@@ -50,8 +50,6 @@ def multiply(m, n):
 		result += m1
 	return -result if reverse else result
 
-def subtract(m, n):
-	return m - n
 
 if __name__ == "__main__":
 	b = multiply(2,4)
