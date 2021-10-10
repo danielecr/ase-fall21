@@ -10,6 +10,17 @@ def sum(m,n):
 			res += 1
 	return res;
 
+def subtract(m,n):
+	res = m;
+	if n > 0:
+		for x in range(abs(n)):
+			res -= 1
+	else:
+		for x in range(0, n):
+			res += 1
+	return res;
+
+
 def divide(m, n):
 	if n == 0:
 		raise ZeroDivisionError
@@ -31,20 +42,29 @@ def divide(m, n):
 		return quot
 
 def multiply(m, n):
-	return m * n
+	reverse = (m < 0 and  n > 0) or (m > 0 and n < 0)
+	m1 = abs(m)
+	n1 = abs(n)
+	result = 0
+	for i in range(0,n1):
+		result += m1
+	return -result if reverse else result
 
 def subtract(m, n):
 	return m - n
 
 if __name__ == "__main__":
+	b = multiply(2,4)
+	print(b)
+
 	s = sum(3,4)
 	print(s);
 
 	d = divide(7,3)
 	print("division", d)
 
-	d = divide(3, 0)
-	print("division", d)
+	#d = divide(3, 0)
+	#print("division", d)
 
 	d = divide(-3, 1)
 	print("division", d)
