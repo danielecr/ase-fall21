@@ -50,8 +50,23 @@ def multiply(m, n):
 		result += m1
 	return -result if reverse else result
 
+def gcd(m,n):
+	if (m == 0) or (n == 0):
+		raise ZeroDivisionError
+	m = abs(m)
+	n = abs(n)
+	if m == n:
+		return n
+	if m>n:
+		return gcd(m-n,n)
+	else:
+		return gcd(m, n - m)
 
 if __name__ == "__main__":
+	cd = gcd(120232,333);
+	#cd = gcd(1,0)
+	cd = gcd(12, 18)
+	print("GCD:",cd)
 	b = multiply(2,4)
 	print(b)
 
